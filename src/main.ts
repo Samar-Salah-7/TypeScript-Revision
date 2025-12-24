@@ -6,21 +6,39 @@ let userAge: number = 22;
 let isAdmin: boolean = true;
 let src: null = null;
 let product: undefined = undefined;
-
-//Union
-let demo: string | number | boolean = 5;
-// let demo2: string | number | boolean = null; //Type 'number' is not assignable to type string | number | boolean
 let friends: string[] = ["ali", "ahmed", "sara"];
-//Tuple
-let mixArr: [string, number] = ["samar", 5];
-//Grouping
-let groupingArr: (string | number)[] = ["dgsa", "gdgd", 55, "d", 1, 4];
-
-//object
-let employee: Object = {
+//object => we don't Prefer to use this type
+let employee: object = {
   name: "samar",
   age: 10,
 };
+
+//Union
+let demo: string | number | boolean = 5;
+demo = "5";
+// let demo2: string | number | boolean = null; //Type 'number' is not assignable to type string | number | boolean
+
+//Tuple
+let mixArr: [string, number] = ["samar", 5];
+
+//Grouping
+let groupingArr: (string | number)[] = ["dgsa", "gdgd", 55, "d", 1, 4];
+
+// Type Literal
+// ex.1
+let xLiteral: "hello" = "hello";
+xLiteral = "hello"; //Ok
+// xLiteral = "howdy"; //Type '"howdy"' is not assignable to type '"hello"'.
+
+// ex.2
+let gender: "male" | "female" = "female";
+gender = "male";
+// gender="s" ; // Type '"s"' is not assignable to type '"male" | "female"'
+
+// Custom type
+type mixTypes = string | number | boolean;
+let mixVarTypes: mixTypes = true;
+
 //any
 let anyVar: any = 11;
 anyVar = "ss";
